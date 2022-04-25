@@ -1,391 +1,266 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="포트폴리오 설명">
-  <meta name="keywords" content="포트폴리오 키워드들">  
-  <title>홍길동 포트폴리오</title>
-  <link rel="stylesheet" href="./css/reset.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
-
-    /* 루트 스타일 */
-    :root{
-      font-family: 'Noto Sans KR', sans-serif;
-      font-weight:400;
-      font-size:14px;
-      color:#333;
-    }
-    .container{
-      margin:0 20px;
-      background-color:#3c4042;
-    }
-
-    /* 스킵메뉴 스타일 */
-    .skip-menu h4{
-      font-size:0;
-    }
-    .skip-menu a{
-      position:fixed;
-      left:50%;
-      top:-50%;
-      transform:translate(-50%,0);
-      border-radius:5px;
-      padding:10px 20px;
-      background-color:#000;
-      font-weight:700;
-      font-size:32px;
-      color:#fff;      
-    }
-    .skip-menu a:focus{
-      top:50%;
-      transform:translate(-50%,-50%);
-    }
-
-
-    .wrap{
-      padding:44px 0;
-    }
-
-    /* fixed 스타일 헤터, 푸터 */
-    .header,.footer{
-      position:fixed;
-      left:0;
-      right:0;
-      top:0;      
-    }  
-    .footer{
-      top:auto;
-      bottom:0;
-    } 
-    .header .container,.footer .container{
-      background-color:#fff;
-    }
-    .header .row,.footer .row{
-      padding:10px 0;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .header h1 a{
-      font-weight:700;
-      font-size:1.2em;
-    }
-
-    /* 점보트론 스타일 */
-    .jumbo .row{
-      height:calc(100vh - 44px - 44px);
-      display:flex;
-      flex-flow:column nowrap;
-      justify-content:space-around;
-      align-items:center;      
-    }
-    .jumbo .row::before{
-      display:block;
-      content:'';
-    }
-    .jumbo h2{
-      font-family: 'Playball', cursive;
-      font-weight:500;
-      font-size:40px;
-      color:#fff;
-      text-align:center;
-    }
-    .jumbo h3{
-      font-family: 'Baloo 2', cursive;
-      font-weight:700;
-      font-size:72px;
-      color:#f8bcc2;
-      text-align:center;
-    }
-    .jumbo .sec-conts{
-      display:flex;
-      flex-flow:column nowrap;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .scrl-border{
-      width:30px;
-      height:45px;
-      margin-bottom:10px;
-      border:2px solid #fff;
-      border-radius:25px;
-      position:relative;
-    }
-    .move-point{
-      width:6px;
-      height:6px;
-      border-radius:3px;
-      background-color:#fff;
-      position:absolute;
-      left:50%;
-      top:30%;
-      opacity:1;
-      transform:translate(-50%,-50%);
-      animation-name:mouse-whill;
-      animation-duration: 2s;      
-      animation-iteration-count:infinite;      
-    }
-
-    /* 마우스 애니메이션 */
-    @keyframes mouse-whill{
-      0%{
-        top:30%;
-        opacity:1;
-      }      
-      90%{
-        top:70%;
-        opacity:0;
-      }
-      100%{
-        top:70%;
-        opacity:0;
-      }
-    }
-    .scrl-txt{
-      font-size:12px;
-      color:#fff;
-      opacity: 0.5;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="김강산">
+    <meta name="description" content="김강산의 포트폴리오 사이트">
+    <meta name="keywords" content="웹퍼블리셔, 웹접근성, 반응형사이트, HTML5, WEB">
+    <title>김강산의 PORTFOLIO</title>
     
-
-
-    /* 테블릿 스타일 */
-    @media (max-width:767px){
-      .header .row,.footer .row{                
-        justify-content:center;        
-      }
-      .header .row p,.footer address{
-        display:none;
-      } 
-    }
-
-
-    /* 모바일 스타일 */
-    @media (max-width:424px){
-      .container{
-        margin:0;
-      }
-      .jumbo h2{
-        font-size:32px;
-      }
-      .jumbo h3{
-        font-size:64px;
-      }
-
-    }
-
-  </style>
+    <!-- style -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    
+    <!-- web font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700,900" rel="stylesheet">
+    
+    <!-- favicon -->
+    <link rel="icon" href="img/favicon-16.ico">
+    
+    
+    <!--[if IE 8]>
+    <script type="text/javascript">
+        alert("Please Upgrade Your BROWSER !");
+    </script>
+    <![endif]-->
 </head>
 <body>
-  <!-- 웹접근성 -->
-  <div class="skip-menu">
-    <h4>스킵 메뉴</h4>
-    <ul>
-      <li><a href="#home">홈</a></li>
-      <li><a href="#portfolio">포트폴리오</a></li>
-      <li><a href="#profile">내 소개</a></li>
-      <li><a href="#skills">할수 있는 것</a></li>      
-    </ul>
-  </div>
-
-  <div class="wrap">
-
-    <header class="header" id="home">
-      <div class="container">
-        <div class="row">
-          <h1><a href="#">GILDONG HONG</a></h1>
-          <p><a href="#">gildong-hong@naver.com</a></p>
+   <!-- fixed 영역 -->
+    <div id="top">
+        <h1 class="name">
+            <a href="#">KANGSAN KIM</a>
+        </h1>
+        <p>sovaniirune@naver.com</p>
+    </div>
+    
+    <div id="bottom">
+        <p>Copyright @ 2019 by KANGSAN KIM All Right Reserved</p>
+        <div class="sns">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
-      </div>
-    </header>
-
-    <section class="section jumbo">
-      <div class="container">
-        <div class="row">
-          <div class="sec-tit">
-            <h2>Creative</h2>
+    </div>
+    
+    <div id="left"></div>
+    <div id="right"></div>
+    <!-- //fixed 영역 -->
+    
+    <!-- intro -->
+    <div id="intro">
+        <div class="content">
+            <span>Creative</span>
+            <h2>PORTFOLIO</h2>
+        </div>
+        
+        <div class="wheel">
+            <div class="mouse"></div>
+            <span>SCROLL DOWN</span>
+        </div>
+    </div>
+    <!-- //intro -->
+    
+    <!-- profile -->
+    <div id="profile">
+        <div class="container">
+            <h3>PROFILE</h3>
+            <div class="card_wrap" data-aos="fade-up">
+                <div class="card c_left">
+                    <div class="front">
+                        <div class="front_content middle">
+                            <h4>EDUCATION</h4>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back_content middle">
+                            <p>
+                                <span>2011</span>
+                                <em>수원농생명과학고등학교 졸업</em>
+                            </p>
+                            
+                            <p>
+                                <span>2016</span>
+                                <em>SBS컴퓨터아카데미 수료</em>
+                            </p>
+                            
+                            <p>
+                                <span>2019</span>
+                                <em>수원대학교 외식경영학과 졸업</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card c_middle">
+                    <div class="front">
+                        <div class="front_content middle">
+                            <h4>PROFILE</h4>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back_content middle">
+                            <span class="avatar"><img src="img/avatar.jpg" alt="프로필사진"></span>
+                            <h4>KIM KANGSAN</h4>
+                            <em class="p_dec">AGE 28<br>LIVE Suwon<br>010-9905-1526</em>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card c_right">
+                    <div class="front">
+                        <div class="front_content middle">
+                            <h4>QUALIFICATE</h4>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back_content middle">
+                            <p>
+                                <span>2016</span>
+                                <em>GTQ일러스트 1급</em>
+                            </p>
+                            <p>
+                                <span>2016</span>
+                                <em>GTQ포토샵1급</em>
+                            </p>
+                            <p>
+                                <span>2016</span>
+                                <em>컴퓨터그래픽스운용기능사</em>
+                            </p>
+                            <p>
+                                <span>2018</span>
+                                <em>TOEIC 600</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //card_wrap-->
+        </div>
+    </div>
+    <!-- //profile -->
+    
+    <!-- work -->
+    <div id="work">
+        <div class="container">
             <h3>PORTFOLIO</h3>
-          </div>
-          <div class="sec-conts">
-            <div class="scrl">
-              <div class="scrl-border">
-                <div class="move-point"></div>
-              </div>
+            <div class="work_box">
+                <div class="left_box" data-aos="fade-right">
+                    <img src="img/work1.jpg" alt="작업1" >
+                </div>
+                <div class="right_box" data-aos="fade-left">
+                    <span>WEB STANDARD</span>
+                    <h4>WEB<br>STANDARD</h4>
+                    <a href="http://kangsane.dothome.co.kr/web/" target="_blank" class="view">VIEW SITE</a>
+                </div>
             </div>
-            <div class="scrl-txt">SCROLL DOWN</div>
-          </div>
+            
+            <div class="work_box">
+                <div class="left_box2" data-aos="fade-right">
+                    <span>WEB RESPONSIVE</span>
+                    <h4>WEB<br>RESPONSIVE</h4>
+                    <a href="http://kangsane.dothome.co.kr/responsive/html5/index.html" target="_blank" class="view">VIEW SITE</a>
+                </div>
+                <div class="right_box2" data-aos="fade-left">
+                    <img src="img/work2.jpg" alt="작업2">
+                </div>
+            </div>
+            
+            <div class="work_box">
+                <div class="left_box" data-aos="fade-right">
+                    <img src="img/work3.jpg" alt="작업3">
+                </div>
+                <div class="right_box" data-aos="fade-left">
+                    <span>WEB RESPONSIVE</span>
+                    <h4>GABIA<br>WEB SITE</h4>
+                    <a href="http://kangsane.dothome.co.kr/gabia/" target="_blank" class="view">VIEW SITE</a>
+                </div>
+            </div>
+            
+            <div class="work_box">
+                <div class="left_box2" data-aos="fade-right">
+                    <span>WEB STANDARD</span>
+                    <h4>LOCK&<br>LOCK SITE</h4>
+                    <a href="http://kangsane.dothome.co.kr/locknlock/" target="_blank" class="view">VIEW SITE</a>
+                </div>
+                <div class="right_box2" data-aos="fade-left">
+                    <img src="img/work4.jpg" alt="작업4">
+                </div>
+            </div>
+            
+            <div class="work_box last">
+                <div class="left_box" data-aos="fade-right">
+                    <img src="img/work5.jpg" alt="작업5" >
+                </div>
+                <div class="right_box" data-aos="fade-left">
+                    <span>MOBILE SITE</span>
+                    <h4>MOBILE<br>KAKAO HAIR</h4>
+                    <a href="http://kangsane.dothome.co.kr/kakao/" target="_blank" class="view">VIEW SITE</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section profile" id="profile">
-      <div class="container">
-        <div class="row">
-          <div class="sec-tit">
-            <h2>PROFILE</h2>            
-          </div>
-          <div class="sec-conts">
-            <div class="card card-left">
-              <div class="card-front">
-                <h3>EDUCATIOM</h3>
-              </div>
-              <div class="card-back">
-                <p><span>2020</span><span>한국고등학교 졸업</span></p>
-                <p><span>2022</span><span>한국대학교 3학년 재학</span></p>
-              </div>
+    </div>
+    <!-- //work -->
+    
+    <!-- skill -->
+    <div id="skill">
+        <div class="container">
+            <h3>SKILLS</h3>
+            <div class="skill_box">
+                <ul>
+                    <li data-aos="fade-up" data-aos-duration="1000">
+                        <img src="img/ps.png" alt="포토샵아이콘">
+                        <span>PHOTOSHOP</span>
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="1500">
+                        <img src="img/ai.png" alt="일러스트아이콘">
+                        <span>ILLUSTRATOR</span>
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="2000">
+                        <img src="img/html.png" alt="html아이콘">
+                        <span>HTML</span>
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="2500">
+                        <img src="img/css.png" alt="css아이콘">
+                        <span>CSS</span>
+                    </li>
+                    <li class="last" data-aos="fade-up" data-aos-duration="3000">
+                        <img src="img/js.png" alt="js아이콘">
+                        <span>jQuery</span>
+                    </li>
+                </ul>
             </div>
-
-            <div class="card card-middle">
-              <div class="card-front">
-                <h3>PROFILE</h3>
-              </div>
-              <div class="card-back">
-                <p><img src="./images/avatar.jpg" alt="홍길동사진"></p>
-                <p><span>GILDONG HONG</span></p>
-                <p><span>AGE : 26</span></p>
-                <p><span>경기도 부천시</span></p>
-                <p><span>010-111-2222</span></p>
-              </div>
-            </div>
-
-            <div class="card card-right">
-              <div class="card-front">
-                <h3>QUALIFICATE</h3>
-              </div>
-              <div class="card-back">
-                <p><span>2020</span><span>운전면허 1종 보통</span></p>
-                <p><span>2022</span><span>컴퓨터그래픽스운용기능사</span></p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section portfolio" id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="sec-tit">
-            <h2>PORTFOLIO</h2>            
-          </div>
-          <div class="sec-conts">
-            <div class="port port1">
-              <div class="port-img">
-                <img src="./images/work1.jpg" alt="포트폴리오1 웹표준 미리보기">
-              </div>
-              <div class="port-content">
-                <h3>WEB STANDARD</h3>
-                <h4>WEB<br>STANDARD</h4>
-                <hr>
-                <button>VIEW SITE</button>
-              </div>
+    </div>
+    <!-- //skill -->
+    
+    <div id="footer">
+        <div class="container type-wrap">
+            <div id="typed-strings">
+                <p>Thank you for visiting<br>my portfolio</p>
             </div>
-            <div class="port port2">
-              <div class="port-img">
-                <img src="./images/work2.jpg" alt="포트폴리오2 반응형 웹페이지 미리보기">
-              </div>
-              <div class="port-content">
-                <h3>WEB RESPONSIVE</h3>
-                <h4>WEB<br>RESPONSIVE</h4>
-                <hr>
-                <button>VIEW SITE</button>
-              </div>
-            </div>
-            <div class="port port3">
-              <div class="port-img">
-                <img src="./images/work3.jpg" alt="포트폴리오3 반응형 웹페이지 미리보기">
-              </div>
-              <div class="port-content">
-                <h3>WEB RESPONSIVE</h3>
-                <h4>GABIA<br>WEB SITE</h4>
-                <hr>
-                <button>VIEW SITE</button>
-              </div>
-            </div>
-            <div class="port port4">
-              <div class="port-img">
-                <img src="./images/work4.jpg" alt="포트폴리오4 웹표준 미리보기">
-              </div>
-              <div class="port-content">
-                <h3>WEB STANDARD</h3>
-                <h4>LOCK &<br>LOCK SITE</h4>
-                <hr>
-                <button>VIEW SITE</button>
-              </div>
-            </div>
-            <div class="port port5">
-              <div class="port-img">
-                <img src="./images/work5.jpg" alt="포트폴리오5 모바일 사이트 미리보기">
-              </div>
-              <div class="port-content">
-                <h3>MOBILE SITE</h3>
-                <h4>MOBILE<br>KAKAO HAIR</h4>
-                <hr>
-                <button>VIEW SITE</button>
-              </div>
-            </div>
-          </div>
+            <span id="typed" style="white-space:pre;"></span>
         </div>
-      </div>
-    </section>
-
-    <section class="section skills" id="skills">
-      <div class="container">
-        <div class="row">
-          <div class="sec-tit">
-            <h2>SKILLS</h2>
-          </div>
-          <div class="sec-conts">
-            <div class="skill skill-ps">
-              <img src="./images/ps.png" alt="포토샵 로고 이미지">
-              <p>PHOTOSHOP</p>
-            </div>
-            <div class="skill skill-ai">
-              <img src="./images/ai.png" alt="일러스트레이터 로고 이미지">
-              <p>ILLUSTRATOR</p>
-            </div>
-            <div class="skill skill-html">
-              <img src="./images/html.png" alt="html 로고 이미지">
-              <p>HTML5</p>
-            </div>
-            <div class="skill skill-css">
-              <img src="./images/css.png" alt="css 로고 이미지">
-              <p>CSS3</p>
-            </div>
-            <div class="skill skill-js">
-              <img src="./images/js.png" alt="javaScript 로고 이미지">
-              <p>javaScript</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section thank-you">
-      <div class="container">
-        <div class="row">
-          <p>Thank you for visition <br> my portfolio</p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <address>Copyright @ 2019 by KANGSAN KIM All Right Reserved</address>
-          <div class="sns">
-            <a href="#">facebook</a>
-            <a href="#">twitter</a>
-            <a href="#">instagram</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
+    </div>
+    
+    <button id="topBtn"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+    
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/demos.js"></script>
+    <script src="js/index.js"></script>
+    
+    <script>
+        AOS.init({
+            duration :1200,
+        });
+    </script>
 </body>
 </html>
