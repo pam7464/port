@@ -8,29 +8,97 @@
   <meta name="keywords" content="포트폴리오 키워드들">  
   <title>홍길동 포트폴리오</title>
   <link rel="stylesheet" href="./css/reset.css">
-  <!-- <style>
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-
     :root{
       font-family: 'Noto Sans KR', sans-serif;
+      font-weight:400;
+      font-size:14px;
+      color:#333;
     }
-  </style> -->
+    .container{
+      margin:0 20px;
+    }
+
+    .skip-menu h4{
+      font-size:0;
+    }
+    .skip-menu a{
+      position:fixed;
+      left:50%;
+      top:-50%;
+      transform:translate(-50%,0);
+      border-radius:5px;
+      padding:10px 20px;
+      background-color:#000;
+      font-weight:700;
+      font-size:32px;
+      color:#fff;      
+    }
+    .skip-menu a:focus{
+      top:50%;
+      transform:translate(-50%,-50%);
+    }
+
+    .wrap{
+      padding:44px 0;
+    }
+    .header{
+      position:fixed;
+      left:0;
+      right:0;
+      top:0;
+      background-color:#fff;
+    }    
+    .header .row{
+      padding:10px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .header h1 a{
+      font-weight:700;
+      font-size:1.2em;
+    }
+
+
+
+    /* 테블릿 스타일 */
+    @media (max-width:767px){
+      .header .row{                
+        justify-content:center;        
+      }
+      .header .row p{
+        display:none;
+      }     
+
+    }
+
+
+    /* 모바일 스타일 */
+    @media (max-width:424px){
+      .container{
+        margin:0;
+      }
+    }
+
+  </style>
 </head>
 <body>
   <!-- 웹접근성 -->
   <div class="skip-menu">
     <h4>스킵 메뉴</h4>
     <ul>
-      <li><a href="#">홈</a></li>
-      <li><a href="#">포트폴리오</a></li>
-      <li><a href="#">내 소개</a></li>
-      <li><a href="#">할수 있는 것</a></li>      
+      <li><a href="#home">홈</a></li>
+      <li><a href="#portfolio">포트폴리오</a></li>
+      <li><a href="#profile">내 소개</a></li>
+      <li><a href="#skills">할수 있는 것</a></li>      
     </ul>
   </div>
 
   <div class="wrap">
 
-    <header class="header">
+    <header class="header" id="home">
       <div class="container">
         <div class="row">
           <h1><a href="#">GILDONG HONG</a></h1>
@@ -58,7 +126,7 @@
       </div>
     </section>
 
-    <section class="section profile">
+    <section class="section profile" id="profile">
       <div class="container">
         <div class="row">
           <div class="sec-tit">
@@ -102,7 +170,7 @@
       </div>
     </section>
 
-    <section class="section portfolio">
+    <section class="section portfolio" id="portfolio">
       <div class="container">
         <div class="row">
           <div class="sec-tit">
@@ -169,7 +237,7 @@
       </div>
     </section>
 
-    <section class="section skills">
+    <section class="section skills" id="skills">
       <div class="container">
         <div class="row">
           <div class="sec-tit">
