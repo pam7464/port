@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="./css/reset.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
+
+    /* 루트 스타일 */
     :root{
       font-family: 'Noto Sans KR', sans-serif;
       font-weight:400;
@@ -18,8 +22,10 @@
     }
     .container{
       margin:0 20px;
+      background-color:#3c4042;
     }
 
+    /* 스킵메뉴 스타일 */
     .skip-menu h4{
       font-size:0;
     }
@@ -40,17 +46,26 @@
       transform:translate(-50%,-50%);
     }
 
+
     .wrap{
       padding:44px 0;
     }
-    .header{
+
+    /* fixed 스타일 헤터, 푸터 */
+    .header,.footer{
       position:fixed;
       left:0;
       right:0;
-      top:0;
+      top:0;      
+    }  
+    .footer{
+      top:auto;
+      bottom:0;
+    } 
+    .header .container,.footer .container{
       background-color:#fff;
-    }    
-    .header .row{
+    }
+    .header .row,.footer .row{
       padding:10px 0;
       display:flex;
       justify-content:space-between;
@@ -61,17 +76,92 @@
       font-size:1.2em;
     }
 
+    /* 점보트론 스타일 */
+    .jumbo .row{
+      height:calc(100vh - 44px - 44px);
+      display:flex;
+      flex-flow:column nowrap;
+      justify-content:space-around;
+      align-items:center;      
+    }
+    .jumbo .row::before{
+      display:block;
+      content:'';
+    }
+    .jumbo h2{
+      font-family: 'Playball', cursive;
+      font-weight:500;
+      font-size:40px;
+      color:#fff;
+      text-align:center;
+    }
+    .jumbo h3{
+      font-family: 'Baloo 2', cursive;
+      font-weight:700;
+      font-size:72px;
+      color:#f8bcc2;
+      text-align:center;
+    }
+    .jumbo .sec-conts{
+      display:flex;
+      flex-flow:column nowrap;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .scrl-border{
+      width:30px;
+      height:45px;
+      margin-bottom:10px;
+      border:2px solid #fff;
+      border-radius:25px;
+      position:relative;
+    }
+    .move-point{
+      width:6px;
+      height:6px;
+      border-radius:3px;
+      background-color:#fff;
+      position:absolute;
+      left:50%;
+      top:30%;
+      opacity:1;
+      transform:translate(-50%,-50%);
+      animation-name:mouse-whill;
+      animation-duration: 2s;      
+      animation-iteration-count:infinite;      
+    }
+
+    /* 마우스 애니메이션 */
+    @keyframes mouse-whill{
+      0%{
+        top:30%;
+        opacity:1;
+      }      
+      90%{
+        top:70%;
+        opacity:0;
+      }
+      100%{
+        top:70%;
+        opacity:0;
+      }
+    }
+    .scrl-txt{
+      font-size:12px;
+      color:#fff;
+      opacity: 0.5;
+    }
+    
 
 
     /* 테블릿 스타일 */
     @media (max-width:767px){
-      .header .row{                
+      .header .row,.footer .row{                
         justify-content:center;        
       }
-      .header .row p{
+      .header .row p,.footer address{
         display:none;
-      }     
-
+      } 
     }
 
 
@@ -80,6 +170,13 @@
       .container{
         margin:0;
       }
+      .jumbo h2{
+        font-size:32px;
+      }
+      .jumbo h3{
+        font-size:64px;
+      }
+
     }
 
   </style>
