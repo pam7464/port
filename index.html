@@ -61,13 +61,14 @@
       position:fixed;
       left:50%;
       top:-50%;
+      z-index:10001;
       transform:translate(-50%,0);
       border-radius:5px;
       padding:10px 20px;
       background-color:#000;
       font-weight:700;
       font-size:32px;
-      color:#fff;      
+      color:#fff;            
     }
     .skip-menu a:focus{
       top:50%;
@@ -84,7 +85,8 @@
       position:fixed;
       left:0;
       right:0;
-      top:0;      
+      top:0;  
+      z-index:1000;    
     }  
     .footer{
       top:auto;
@@ -264,8 +266,67 @@
       font-weight:400;
       font-size:18px;
       color:#333;
+    }    
+
+
+    /* 포트폴리오 스타일 */
+    .portfolio .sec-conts{
+      width:960px;
+      margin:0 auto;
     }
-    
+    .port{
+      display:flex;
+      flex-flow:row wrap;      
+      margin-bottom:150px;
+    }
+    .port5{
+      margin-bottom:0;
+    }
+    .port-img,.port-content{
+      width:50%;
+    }
+    .port-content{
+      display:flex;
+      flex-flow:column nowrap;
+      justify-content: space-evenly;
+      align-items:flex-end;
+    }
+    .port:nth-child(2n) .port-content{
+      align-items:flex-start;
+    }
+    .port:nth-child(2n) .port-img{
+      order:2;
+    }
+    .port:nth-child(2n) .port-content{
+      order:1;
+    }
+    .port-content h3{      
+      color:#f8bcc2;
+    }
+    .port-content h4{
+      font-weight:600;
+      font-size:64px;
+      color:#fff;
+      text-align:right;
+      line-height:68px;
+    }
+    .port:nth-child(2n) .port-content h4{
+      text-align:left;
+    }
+    .port-content hr{
+      width:100%;
+    }
+    .port-content button{
+      border:1px solid #338083;
+      padding:15px 20px;
+      background-color:transparent;
+      color:#fff;
+      cursor:pointer;
+    }
+    .port-content button:hover{
+      background-color:#338083;      
+    }
+
     
     @media (max-width:1200px){
       .profile .sec-conts{
@@ -288,8 +349,20 @@
       .card-middle .card-back span{                
         font-size:14px;        
       }
+      .portfolio .sec-conts{
+        width:840px;        
+      }
     }
 
+    @media (max-width:960px){
+      .portfolio .sec-conts{
+        width:640px;        
+      }
+      .port-content h4{
+        font-size:48px;
+        line-height:56px;
+      }
+    }
 
     /* 테블릿 스타일 */
     @media (max-width:767px){
@@ -322,8 +395,41 @@
       .card-middle .card-back span{                
         font-size:20px;        
       }
+      .portfolio .sec-conts{
+        width:80%;        
+        min-width:320px;
+      }
+      .port{
+        margin-bottom:100px;
+      }    
+      .port5{
+        margin-bottom:0;
+      }  
+      .port-img,.port-content{
+        width:100%;
+      }
+      .port-img{
+        margin-bottom:20px;
+      }
+      .port-content{
+        align-items:center !important;
+      }
+      .port:nth-child(2n) .port-img{
+        order:1;
+      }
+      .port:nth-child(2n) .port-content{
+        order:2;
+      }
+      .port-content h4{
+        margin-bottom:20px;
+        font-size:42px;
+        line-height:50px;
+        text-align:center !important;
+      }
+      .port-content hr{
+        display:none;
+      }
     }
-
 
     /* 모바일 스타일 */
     @media (max-width:424px){
