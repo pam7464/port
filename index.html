@@ -328,6 +328,23 @@
       background-color:#338083;      
     }
 
+    /* 스킬스타일 */
+    .skills .sec-conts{
+      width:960px;
+      display:flex;
+      flex-flow:row nowrap;
+      justify-content: space-between;
+    }
+    .skill{
+      width:16%;
+    }
+    .skill p{
+      margin-top:20px;
+      color:#fff;
+      text-align:center;
+    }
+
+
     
     @media (max-width:1200px){
       .profile .sec-conts{
@@ -353,6 +370,9 @@
       .portfolio .sec-conts{
         width:840px;        
       }
+      .skills .sec-conts{
+        width:760px;        
+      }
     }
 
     @media (max-width:960px){
@@ -362,6 +382,9 @@
       .port-content h4{
         font-size:48px;
         line-height:56px;
+      }
+      .skills .sec-conts{
+        width:540px;        
       }
     }
 
@@ -432,6 +455,22 @@
       }
     }
 
+    @media ( max-width:640px){
+      .skills .sec-conts{
+        width:80%;        
+        min-width:320px;
+        flex-direction:column;
+        align-items:center;
+      }
+      .skill{
+        width:40%;
+        margin-bottom:50px;
+      }
+      .skill:last-child{
+        margin-bottom:0;
+      }
+    }
+
     /* 모바일 스타일 */
     @media (max-width:424px){
       .container{
@@ -461,7 +500,6 @@
   </div>
 
   <div class="wrap">
-
     <header class="header" id="home">
       <div class="container">
         <div class="row">
@@ -551,7 +589,7 @@
                 <h3>WEB STANDARD</h3>
                 <h4>WEB<br>STANDARD</h4>
                 <hr>
-                <button>VIEW SITE</button>
+                <button id="port1">VIEW SITE</button>
               </div>
             </div>
             <div class="port port2">
@@ -562,7 +600,7 @@
                 <h3>WEB RESPONSIVE</h3>
                 <h4>WEB<br>RESPONSIVE</h4>
                 <hr>
-                <button>VIEW SITE</button>
+                <button id="port2">VIEW SITE</button>
               </div>
             </div>
             <div class="port port3">
@@ -573,7 +611,7 @@
                 <h3>WEB RESPONSIVE</h3>
                 <h4>GABIA<br>WEB SITE</h4>
                 <hr>
-                <button>VIEW SITE</button>
+                <button id="port3">VIEW SITE</button>
               </div>
             </div>
             <div class="port port4" data-aos="fade-left">
@@ -584,7 +622,7 @@
                 <h3>WEB STANDARD</h3>
                 <h4>LOCK &<br>LOCK SITE</h4>
                 <hr>
-                <button>VIEW SITE</button>
+                <button id="port4">VIEW SITE</button>
               </div>
             </div>
             <div class="port port5">
@@ -595,7 +633,7 @@
                 <h3>MOBILE SITE</h3>
                 <h4>MOBILE<br>KAKAO HAIR</h4>
                 <hr>
-                <button>VIEW SITE</button>
+                <button id="port5">VIEW SITE</button>
               </div>
             </div>
           </div>
@@ -610,35 +648,27 @@
             <h2>SKILLS</h2>
           </div>
           <div class="sec-conts">
-            <div class="skill skill-ps">
+            <div class="skill skill-ps" data-aos="fade-up" data-aos-delay="300">
               <img src="./images/ps.png" alt="포토샵 로고 이미지">
               <p>PHOTOSHOP</p>
             </div>
-            <div class="skill skill-ai">
+            <div class="skill skill-ai" data-aos="fade-up" data-aos-delay="500">
               <img src="./images/ai.png" alt="일러스트레이터 로고 이미지">
               <p>ILLUSTRATOR</p>
             </div>
-            <div class="skill skill-html">
+            <div class="skill skill-html" data-aos="fade-up" data-aos-delay="700">
               <img src="./images/html.png" alt="html 로고 이미지">
               <p>HTML5</p>
             </div>
-            <div class="skill skill-css">
+            <div class="skill skill-css" data-aos="fade-up" data-aos-delay="900">
               <img src="./images/css.png" alt="css 로고 이미지">
               <p>CSS3</p>
             </div>
-            <div class="skill skill-js">
+            <div class="skill skill-js" data-aos="fade-up" data-aos-delay="1100">
               <img src="./images/js.png" alt="javaScript 로고 이미지">
               <p>javaScript</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section thank-you">
-      <div class="container">
-        <div class="row">
-          <p>Thank you for visition <br> my portfolio</p>
         </div>
       </div>
     </section>
@@ -659,7 +689,21 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>   
-    AOS.init();
+    AOS.init({
+      delay: 200,
+      duration: 1000,
+    });   
+    
+    let btnPort1 = document.getElementById('port1')
+    let btnPort2 = document.getElementById('port2')
+    let btnPort3 = document.getElementById('port3')
+    let btnPort4 = document.getElementById('port4')
+    let btnPort5 = document.getElementById('port5')
+
+    btnPort1.addEventListener('click',function(){
+      window.open('https://pam7464.github.io/megabox','_blank');
+    })
+
   </script>
 </body>
 </html>
